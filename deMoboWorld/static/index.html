@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+	<head> 
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+		<title>de Mobo World</title>
+		<!-- include jQuery and demobo library-->
+		<link rel="stylesheet" type="text/css" href="http://www.demobo.com/app.css"/>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+        <script type="text/javascript" src="http://www.demobo.com/js_all.js"></script>
+		<!-- include jQuery and demobo library -->
+		
+		<!-- include protoClass and box2d library-->
+		<script type="text/javascript" src="http://www.demobo.com/js/lib/protoclass.js"></script>
+		<script type="text/javascript" src="http://www.demobo.com/js/lib/box2d.js"></script>
+		<!-- include protoClass and box2d library-->
+		
+		<script type="text/javascript" src="main.js"></script>
+		
+		<style>
+			body {
+			    text-align: center;
+				overflow:hidden;
+				background-color: #000;
+			}
+			#player2 {
+			    top: 50px;
+			    left: 50px;
+				width: 48px;
+			    height: 57px;
+				background-image: url(images/devil.png);	
+			}
+			#player1 {
+			    top: 50px;
+			    left: 150px;
+				width: 40px;
+			    height: 75px;
+				background-image: url(images/angel.png);
+			}
+			.player{
+			    position: absolute;
+				z-index: 1101;
+				display:none;
+			}
+			.player.active {
+				display:block;
+			}
+			#startButton {
+				position: absolute;
+				top: 40%;
+				left: 45%;
+				font-size: 30px;
+			}
+		</style>
+	</head> 
+  <body style="margin:0px;">
+    <canvas id="canvas"></canvas>
+	<div id="canvasDiv"></div>
+	<div id="player1" class="player"></div>
+	<div id="player2" class="player"></div>
+	<button id="startButton">Start</button>
+  </body> 
+ </html>
