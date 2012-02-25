@@ -1,5 +1,5 @@
 # de Mobo
-de Mobo is an JAVASCRIPT library which can easily be embedded in your web applications.
+de Mobo is a JAVASCRIPT library which can easily be embedded in your web applications.
 
 It helps web developers putting all the good stuffs from smart phones into web HTML5 gaming.
 
@@ -39,7 +39,7 @@ DEMOBO.developer = "myemail@gmail.com";
 
 * step 4:
 
-run the web game on app engine console and view http://dev.demovo.com:<port> on the browser
+run the web game on google app engine console and view http://dev.demovo.com:<port> on the browser
 
 
 * step 5:
