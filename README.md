@@ -12,14 +12,14 @@ https://github.com/demobo/games
 
 
 # Tutorial
-step 1:
+* step 1:
 
 Install google app engine for python
 
 http://code.google.com/appengine/downloads.html#Google_App_Engine_SDK_for_Python
 
 
-step 2:
+* step 2:
 
 Edit the hosts file
 
@@ -30,19 +30,19 @@ add following line in the file
 127.0.1.1 dev.demobo.com
 
 
-step 3:
+* step 3:
 
 Assign your email address to DEMOBO.developer in main.js
 
 DEMOBO.developer = "myemail@gmail.com";
 
 
-step 4:
+* step 4:
 
 run the web game on app engine console and view http://dev.demovo.com:<port> on the browser
 
 
-step 5:
+* step 5:
 
 press ESC to show the connection QR code;
 
