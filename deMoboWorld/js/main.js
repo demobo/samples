@@ -3,12 +3,11 @@ if (DEMOBO) {
 	DEMOBO.developer = 'developer@demobo.com';
 	DEMOBO.controller = {"page": "drawing", "gestureName": "demobo world", "gestureType": "2d"};
 	DEMOBO.init = function () {
-		$.demobo();
-		window.addEventListener('phone_start',function(e) {
+		$.demobo.addEventListener('start',function(e) {
 			connectPlayer(e.deviceID);
 			$('#startButton').hide();
 		},false);
-		window.addEventListener('phone_gesture',function(e) {
+		$.demobo.addEventListener('gesture',function(e) {
 			if (e.gestureType=='2d') {
 				var player = $('.player[deviceID="'+e.deviceID+'"]');
 				if (player.length>0) {
@@ -17,7 +16,13 @@ if (DEMOBO) {
 					createCanvasText(world, p.left, p.top, false, txtObj);
 				}
 			} else {
+				console.log(e.gestureName);
 				switch (e.gestureName) {
+				case 'tornado':
+					orientation.x = 0;
+					orientation.y --;
+					orientation.y = Math.max(orientation.y, -1);
+					break;
 				case '←':
 					orientation.y = 0;
 					orientation.x --;
@@ -385,3 +390,8 @@ function connectPlayer(deviceID) {
 	});
 }
 
+function setActionType() {
+	var actionType = $("#actionType input:checked").val();
+	if (actionType == 's') $.demobo.addController({"page": "drawing", "gestureName": "demobo world", "gestureType": "2d"}); 
+	else if (actionType=='m') $.demobo.addController({"page": "tennis", "gestureName": "motion gesture", "gestureType": "3d"});
+}

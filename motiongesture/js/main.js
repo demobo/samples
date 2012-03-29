@@ -3,16 +3,7 @@ if (DEMOBO) {
 	DEMOBO.developer = 'developer@demobo.com';
 	DEMOBO.controller = {"page": "tennis", "gestureName": "motion gesture", "gestureType": "3d"};
 	DEMOBO.init = function () {
-		$.demobo({
-			open: function(){
-                addStatus("demobo connected!");
-                addStatus('Start phone motion gesture detection.');
-			},
-			close: function(){
-                addStatus("demobo was closed");
-            }
-		});
-		window.addEventListener('phone_gesture',function(e) {
+		$.demobo.addEventListener('gesture',function(e) {
 			addEvent(e);
 		},false);
 	};

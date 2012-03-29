@@ -3,19 +3,7 @@ if (DEMOBO) {
 	DEMOBO.developer = 'developer@demobo.com';
 	DEMOBO.controller = {"page": "drawing", "gestureName": "touch gesture", "gestureType": "2d"};
 	DEMOBO.init = function () {
-		$.demobo({
-			open: function(){
-                addStatus("demobo connected!");
-                addStatus('Start touch move gesture detection.');
-//				setTimeout(function(){
-//					$.demobo.send('register','{"page": "drawing", "gestureName": "touch gesture", "gestureType": "2d"}');
-//            	},300);
-			},
-			close: function(){
-                addStatus("demobo was closed");
-            }
-		});
-		window.addEventListener('phone_gesture',function(e) {
+		$.demobo.addEventListener('gesture',function(e) {
 			addEvent(e);
 		},false);
 	};

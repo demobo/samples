@@ -3,8 +3,7 @@ if (DEMOBO) {
 	DEMOBO.developer = 'developer@demobo.com';
 	DEMOBO.controller = {"page": "wheel"};
 	DEMOBO.init = function () {
-		$.demobo();
-		window.addEventListener('phone_update',function(e) {
+		$.demobo.addEventListener('update',function(e) {
 			accel_pool.push({
 							ax: -e.y,
 							ay: -e.x,

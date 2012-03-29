@@ -39,7 +39,7 @@ DEMOBO.developer = "myemail@gmail.com";
 
 * step 4:
 
-run the web game on google app engine console and view http://dev.demovo.com:<port> on the browser
+run the web game on google app engine console and view http://dev.demobo.com:<port> on the browser
 
 
 * step 5:

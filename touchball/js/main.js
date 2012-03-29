@@ -2,7 +2,6 @@
 if (DEMOBO) {
 	DEMOBO.developer = 'developer@demobo.com';
 	DEMOBO.init = function () {
-		$.demobo({});
 		var ondoubletap = function(){
 	        var cursor = $(this);
 	        cursor.effect('bounce', {
