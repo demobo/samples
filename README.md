@@ -22,8 +22,8 @@ http://code.google.com/appengine/downloads.html#Google_App_Engine_SDK_for_Python
 * step 2:
 
 Edit the hosts file
-
-vi /etc/hosts
+  
+sudo vi /etc/hosts
 
 add following line in the file
 
@@ -39,7 +39,7 @@ DEMOBO.developer = "myemail@gmail.com";
 
 * step 4:
 
-run the web game on google app engine console and view http://dev.demobo.com:<port> on the browser
+run the web game on google app engine console and view http://dev.demobo.com:PORT on the browser
 
 
 * step 5:
