@@ -1,7 +1,7 @@
 /* setting */
 if (DEMOBO) {
 	DEMOBO.developer = 'developer@demobo.com';
-	DEMOBO.controller = {"page": "drawing", "gestureName": "touch gesture", "gestureType": "2d"};
+	DEMOBO.controller = {"page": "drawing", "gestureName": "demo", "gestureType": "2d"};
 	DEMOBO.init = function () {
 		$.demobo.addEventListener('gesture',function(e) {
 			addEvent(e);
