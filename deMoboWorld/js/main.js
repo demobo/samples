@@ -392,6 +392,6 @@ function connectPlayer(deviceID) {
 
 function setActionType() {
 	var actionType = $("#actionType input:checked").val();
-	if (actionType == 's') $.demobo.addController({"page": "drawing", "gestureName": "demobo world", "gestureType": "2d"}); 
-	else if (actionType=='m') $.demobo.addController({"page": "tennis", "gestureName": "motion gesture", "gestureType": "3d"});
+	if (actionType == 's') $.demobo.setController({"page": "drawing", "gestureName": "demobo world", "gestureType": "2d"}); 
+	else if (actionType=='m') $.demobo.setController({"page": "tennis", "gestureName": "motion gesture", "gestureType": "3d"});
 }
