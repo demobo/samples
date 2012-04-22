@@ -2,18 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title>Move the Ball</title>
+        <title>display/controller</title>
         <style>
-            #ball {
-                width: 40px;
-                height: 40px;
-                border-radius: 20px;
-                -webkit-radius: 20px;
-                background-color: red;
-				top: 50px;
-    			left: 50px;
-				position: absolute;
-            }
         </style>
 		<!-- include jQuery and demobo library-->
 		<link rel="stylesheet" type="text/css" href="http://api.demobo.com/app.css"/>
@@ -24,8 +14,12 @@
 		<script type="text/javascript" src="main.js"></script>
     </head>
     <body>
-        <div id="status">
-        </div>
-        <div id="ball"></div>
+    	<label><input type="radio" name="animateType" value="spi" />setPage image</label>
+        <label><input type="radio" name="animateType" value="spp" />setPage page</label>
+		<label><input type="radio" name="animateType" value="op" />openPage in safari</label>
+		<label><input type="radio" name="animateType" value="sh" />setHTML in webView</label>
+		<label><input type="radio" name="animateType" value="c" />clearPage</label>
+        <div id="sourcecode"><pre>Sample Code</pre></div>
+		<div id="message"></div>
     </body>
 </html>

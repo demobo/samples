@@ -1,74 +1,83 @@
 /* setting */
 if (DEMOBO) {
 	DEMOBO.developer = 'developer@demobo.com';
-	DEMOBO.controller = {"page": "wheel"};
+	DEMOBO.controller = {"page": "drawing", "gestureName": "demo", "gestureType": "2d"};
 	DEMOBO.init = function () {
-		$.demobo.addEventListener('update',function(e) {
-			accel_pool.push({
-							ax: e.y,
-							ay: -e.x,
-							az: e.z
-						});	
-		},false);
+		var ondoubletap = function(){
+	        $(this).effect('pulsate', { times:3 }, 300);
+	    };
+	    $('input').click(function() {
+	    	switch (this.value) {
+	    	case 'a':
+	    		$.demobo.setController({'page': 'wheel'});
+	    		$.demobo.setCursor($('#ball'), {
+					sensor: 'accelerometer',
+					motionType: 'acceleration',
+					ondoubletap: ondoubletap
+				});
+	    		$('#sourcecode pre').text("$.demobo.setCursor($('#ball'), {\n"+
+					"\tsensor: 'accelerometer',\n"+
+					"\tmotionType: 'acceleration',\n"+
+					"\tondoubletap: ondoubletap\n"+
+				"});");
+	    		break;
+	    	case 'vxyz':
+	    		$.demobo.setController({'page': 'wheel'});
+	    		$.demobo.setCursor($('#ball'), {
+					sensor: 'accelerometer',
+					motionType: 'velocity',
+					ondoubletap: ondoubletap
+				});
+	    		$('#sourcecode pre').text("$.demobo.setCursor($('#ball'), {\n"+
+						"\tsensor: 'accelerometer',\n"+
+						"\tmotionType: 'velocity',\n"+
+						"\tondoubletap: ondoubletap\n"+
+					"});");
+	    		break;
+	    	case 'vzyx':
+	    		$.demobo.setController({'page': 'wheel'});
+	    		$.demobo.setCursor($('#ball'), {
+					sensor: 'accelerometer',
+					motionType: 'velocity',
+					ondoubletap: ondoubletap,
+					plane: 'zxy'
+				});
+	    		$('#sourcecode pre').text("$.demobo.setCursor($('#ball'), {\n"+
+						"\tsensor: 'accelerometer',\n"+
+						"\tmotionType: 'velocity',\n"+
+						"\tondoubletap: ondoubletap,\n"+
+						"\plane: 'zyx',\n"+
+					"});");
+	    		break;	
+	    	case 'd':
+	    		$.demobo.setController({'page': 'wheel'});
+	    		$.demobo.setCursor($('#ball'), {
+					sensor: 'accelerometer',
+					motionType: 'displacement',
+					ondoubletap: ondoubletap
+				});
+	    		$('#sourcecode pre').text("$.demobo.setCursor($('#ball'), {\n"+
+						"\tsensor: 'accelerometer',\n"+
+						"\tmotionType: 'displacement',\n"+
+						"\tondoubletap: ondoubletap\n"+
+					"});");
+	    		break;
+	    	case 'tr':
+	    	default:
+	    		$.demobo.setController({'page': 'drawing', 'gestureName': 'demo', 'gestureType': '2d'});
+		    	$.demobo.setCursor($('#ball'), {
+					sensor: 'touch',
+					source: 'dpad',
+					touchPosition: 'relative',
+					ondoubletap: ondoubletap
+				});
+		    	$('#sourcecode pre').text("$.demobo.setCursor($('#ball'), {\n"+
+						"\tsensor: 'touch',\n"+
+						"\tsource: 'dpad',\n"+
+						"\ttouchPosition: 'relative'\n"+
+						"\tondoubletap: ondoubletap\n"+
+					"});");
+	    	}
+	    });
 	};
 }
-
-// Position Variables
-var x = 0;
-var y = 0;
-
-// Speed - Velocity
-var vx = 0;
-var vy = 0;
-
-// Acceleration
-var ax = 0;
-var ay = 0;
-
-var delay = 10;
-var vMultiplier = 0.01;
-var animationType;
-var accel_pool = [];
-function addStatus(text){
-    $('#status').prepend($('<div>' + text + '</div>'));
-}
-setInterval(function(){
-	var ball = document.getElementById("ball");
-	var p = accel_pool.shift();
-	if (p && p.ax && p.ay) {
-		if ($("input:checked").val()=='a') {
-			ax = p.ax;
-			ay = p.ay;
-		} else if ($("input:checked").val()=='v') {
-			ax = ay = 0;
-			vx = p.ax*100;
-			vy = p.ay*100;
-		} else {
-			ax = ay = vx = vy = 0;
-			x =  document.documentElement.clientWidth*(0.5+p.ax/3);
-			y =  document.documentElement.clientHeight*(0.5+p.ay/3);
-		}
-	}
-    vy = vy + (ay);
-    vx = vx + (ax);
-    y = parseInt(y + vy * 0.01);
-    x = parseInt(x + vx * 0.01);
-	if (x < 0) {
-        x = 0;
-        vx = 0;
-    }
-    if (y < 0) {
-        y = 0;
-        vy = 0;
-    }
-	if (x > document.documentElement.clientWidth - 40) {
-        x = document.documentElement.clientWidth - 40;
-        vx = 0;
-    }
-    if (y > document.documentElement.clientHeight - 40) {
-        y = document.documentElement.clientHeight - 40;
-        vy = 0;
-    }
-    ball.style.bottom = y + "px";
-    ball.style.left = x + "px";
-}, delay);

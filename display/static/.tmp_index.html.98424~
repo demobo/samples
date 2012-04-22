@@ -10,22 +10,22 @@
                 border-radius: 20px;
                 -webkit-radius: 20px;
                 background-color: red;
-                position: absolute;
+				position: absolute;
+				top: 50px;
+    			left: 50px;
             }
         </style>
-        <!-- include jQuery and demobo library-->
+		<!-- include jQuery and demobo library-->
 		<link rel="stylesheet" type="text/css" href="http://api.demobo.com/app.css"/>
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-        <script type="text/javascript" src="http://api.demobo.com/js_all_.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="http://api.demobo.com/js_all.js"></script>
 		<!-- include jQuery and demobo library -->
 		<script type="text/javascript" src="main.js"></script>
     </head>
     <body>
-    	<label><input type="radio" name="animateType" value="tr" />touch relative</label>
-		<label><input type="radio" name="animateType" value="a" />acceleration</label>
-		<label><input type="radio" name="animateType" value="vxyz" />velocity xyz</label>
-		<label><input type="radio" name="animateType" value="vzyx" />velocity zyx</label>
-        <div id="sourcecode"><pre>Sample Code</pre></div>
+        <div id="status">
+        </div>
         <div id="ball"></div>
     </body>
 </html>
