@@ -27,7 +27,7 @@ sudo vi /etc/hosts
 
 add following line in the file
 
-127.0.1.1 dev.demobo.com
+127.0.0.1 dev.demobo.com
 
 
 * step 3:
