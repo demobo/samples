@@ -34,19 +34,19 @@ if (DEMOBO) {
 						"\tondoubletap: ondoubletap\n"+
 					"});");
 	    		break;
-	    	case 'vzyx':
+	    	case 'vyzx':
 	    		$.demobo.setController({'page': 'wheel'});
 	    		$.demobo.setCursor($('#ball'), {
 					sensor: 'accelerometer',
 					motionType: 'velocity',
 					ondoubletap: ondoubletap,
-					plane: 'zxy'
+					plane: 'yzx'
 				});
 	    		$('#sourcecode pre').text("$.demobo.setCursor($('#ball'), {\n"+
 						"\tsensor: 'accelerometer',\n"+
 						"\tmotionType: 'velocity',\n"+
 						"\tondoubletap: ondoubletap,\n"+
-						"\plane: 'zyx',\n"+
+						"\tplane: 'yzx',\n"+
 					"});");
 	    		break;	
 	    	case 'd':

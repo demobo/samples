@@ -12,5 +12,11 @@
     <body>
         <div id="status"></div>
 		<div id="message"></div>
+		<div id="sourcecode"><pre>
+$.demobo.setController({page:"drawing",gestureName:"demo",gestureType:"2d"});	
+$.demobo.addEventListener('gesture',function(e) {
+	console.log(e.gestureName, e.score);
+},false);
+		</pre></div>
     </body>
 </html>

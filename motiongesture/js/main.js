@@ -17,7 +17,7 @@ function addEvent(evt){
 	$('#status').prepend($('<div>gestureType: '+evt.gestureType+'</div>'));
 	if (evt.gestureName && evt.score) {
 		$('#status').prepend($('<h1>'+evt.gestureName+' '+evt.score+'</h1>'));
-		var messageCss = {'font-size':300,'color':'#433','position':'absolute','text-align':'center','width':'90%','top':'10%'};
+		var messageCss = {'font-size':300,'color':'#433','position':'absolute','text-align':'center','width':'90%','top':'10%', 'z-index':100};
 		$('#message').text(evt.gestureName).css(messageCss).show().fadeOut(1000);
 	}
 }
