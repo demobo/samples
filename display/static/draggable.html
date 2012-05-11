@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <style type="text/css">
+      .draggable {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        margin-left: -30px;
+        margin-top: -30px;
+
+        color: #FFF;
+        font: bold 16px Helvetica,Arial,Sans-serif;
+        text-align: center;
+        background-color: #ABF;
+        border: 3px solid #fff;
+      }
+    </style>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+</head>
+<body>
+	<script>
+		function pad (str, max) {
+		  return str.length < max ? pad("0" + str, max) : str;
+		}
+		for (var i = 1; i<16; i++) {
+			var target = $('<div class="draggable"><img width="100%" height="100%" src="http://www.taylorpictures.net/albums/other/instagram/thumb_'+pad(i+"",3)+'.jpg"></div>');
+			var csstop = parseInt(2+(i-1)/5)*60+"px";
+			var cssleft = parseInt(2+(i-1)%5)*60+"px";
+			target.css({
+				top: csstop,
+				left: cssleft
+			});
+			$('body').append(target);
+		}
+	</script>
+</body>
+</html>

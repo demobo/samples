@@ -2,18 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title>Move the Ball</title>
+        <title>display/controller</title>
         <style>
-            #ball {
-                width: 40px;
-                height: 40px;
-                border-radius: 20px;
-                -webkit-radius: 20px;
-                background-color: red;
-				position: absolute;
-				top: 50px;
-    			left: 50px;
-            }
         </style>
 		<!-- include jQuery and demobo library-->
 		<link rel="stylesheet" type="text/css" href="http://api.demobo.com/app.css"/>
@@ -21,11 +11,16 @@
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="http://api.demobo.com/js_all.js"></script>
 		<!-- include jQuery and demobo library -->
-		<script type="text/javascript" src="main.js"></script>
+		<script type="text/javascript" src="dnd.js"></script>
+		<link rel="stylesheet" type="text/css" href="dnd.css" />
     </head>
-    <body>
-        <div id="status">
-        </div>
-        <div id="ball"></div>
+    <body scroll="no">
+    	<button onclick='$.demobo.setHTML({url:"http://touchball.playableitem.demobo.com/draggable.html", touchEnabled: true});'>Start</button>
+        <div id="sourcecode"><pre>Sample Code</pre></div>
+		<div id="message"></div>
+		<div id="iphoneDock">
+			<img src="iphone_landscape.png">
+		</div>
+		<div id="iphoneDockScreen"></div>
     </body>
 </html>
