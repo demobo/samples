@@ -1,11 +1,12 @@
 /* setting */
 if (DEMOBO) {
 	DEMOBO.developer = 'developer@demobo.com';
-	DEMOBO.controller = {"page": "webview"};
+	DEMOBO.controller = {"page": "default"};
 	DEMOBO.maxPlayers = 1;
 	var imgID=0;
 	DEMOBO.init = function () {
 		$.demobo.addEventListener('input',function(e) {
+			console.log(e);
 			var messageCss = {'font-size':300,'color':'#433','position':'absolute','text-align':'center','width':'90%','top':'10%'};
 			$('#message').text(e.value).css(messageCss).show().fadeOut(1000);
 		},false);
@@ -61,7 +62,7 @@ if (DEMOBO) {
 		    		                "<input id='lastname' type='text' name='lname' style='font-size: 30px;'/>\n"+
 		    		                "</div>"
 		    		                ];
-		    		$.demobo.setController({ page: 'webview' });
+		    		$.demobo.setController({ page: 'default' });
 	    			$.demobo.setHTML({ html: imgArray[imgID] });
 	    			$('#sourcecode pre').text(
 							"$.demobo.setHTML({ html: '"+imgArray[imgID]+"'\n});"
