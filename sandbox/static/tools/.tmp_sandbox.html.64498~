@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>controller sandbox</title>
+        <style>
+            body {
+                padding: 20px;
+            }
+            
+            div {
+                margin: 20px;
+            }
+        </style>
+        <!-- include jQuery and demobo library-->
+        <link rel="stylesheet" type="text/css" href="http://api.demobo.com/app.css"/>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js">
+        </script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js">
+        </script>
+        <script type="text/javascript" src="http://api.demobo.com/js_core.js">
+        </script>
+        <!-- include jQuery and demobo library -->
+        <script type="text/javascript" src="sandbox.js">
+        </script>
+    </head>
+    <body>
+        <label>
+            <input type="text" id="url" value="/rc/pandora" size="100"/>
+            <button id="upload">
+                upload
+            </button>
+            <button id="set">
+                set
+            </button>
+            <button id="test">
+                test
+            </button>
+        </label>
+        <div>
+            <label>
+                <input type="radio" name="dimension" value="480x320" checked/>iphone
+            </label>
+            <label>
+                <input type="radio" name="dimension" value="800x480" />Nexus One 800x480
+            </label>
+            <label>
+                <input type="radio" name="dimension" value="854x480" />Droid 854x480
+            </label>
+            <label>
+                <input type="radio" name="dimension" value="320x240" />320x240
+            </label>
+            <label>
+                <input type="radio" name="dimension" value="960x480" />960x480
+            </label>
+        </div>
+        <div>
+            <iframe>
+            </iframe>
+        </div>
+        <div>
+            <a id="controllerUrl" target="_blank">Open in new window</a>
+        </div>
+        <div id="message">
+        </div>
+    </body>
+</html>

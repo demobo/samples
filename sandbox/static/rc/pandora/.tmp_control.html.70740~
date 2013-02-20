@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <title></title>
+   
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">
+        </script>
+		
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+        <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js">
+        </script>
+		
+		<link rel="stylesheet" type="text/css" href="http://demo.demobo.com/template/pandora/control.css" />
+        <!--<link rel="stylesheet" type="text/css" href="control.css" />-->
+    </head>
+    <body>
+        <div class="logo">
+            <img src="http://demo.demobo.com/template/pandora/images/pandora-logo.png" />
+        </div>
+        <div data-role="page" id="main">
+            <div data-role="content" id="control" class="page">
+                <div class="row">
+                    <a id="playButton" class="playButton button" value="play"></a>
+                    <a id="pauseButton" class="pauseButton button" value="pause"></a>
+                    <a id="skipButton" class="skipButton button" value="skip"></a>
+                </div>
+                <div class="volumeControl row volumeBackground">
+                    <div class="volumeButton" id="volumeButton">
+                    </div>
+                    <input name="slider" id="volumeSlider" value="50" min="0" max="100" data-highlight="false" type="range" />
+                </div>
+            </div>
+            <div data-role="content" id="nowPlaying" class="page">
+                <div id="nowplayingItem" class="row">
+                </div>
+                <div class="updowngroup">
+                    <a id="upButton" class="upButton smallButton" value="up"></a>
+                    <a id="downButton" class="downButton smallButton" value="down"></a>
+                </div>
+            </div>
+            <div data-role="content" id="stations" class="page">
+                <!--<div class="searchBox row">
+                    <input class="searchInput" type="text" autocomplete="off" spellcheck="false">
+                </div>-->
+                <div class="stationsList row">
+                    <select id="stationItem" title="Select a station:">
+                    </select>
+                </div>
+            </div>
+            <div id="footer" data-theme="a" data-role="footer" data-position="fixed">
+                <div data-role=navbar>
+                    <ul>
+                        <li>
+                            <a href=# id="controlTab" value="control" class="ui-btn-active">Control</a>
+                        </li>
+                        <li>
+                            <a href=# id="nowPlayingTab" value="nowPlaying">Now Playing</a>
+                        </li>
+                        <li>
+                            <a href=# id="stationsTab" value="stations">Stations</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script>
+            var curPage = "#control";
+            $('#footer li a').click(function(){
+                curPage = '#' + $(this).attr('value');
+                $('#main').animate({
+                    scrollLeft: $(curPage)[0].offsetLeft
+                }, 'slow');
+            });
+            function loadNowPlayingItem(item){
+                $('#nowplayingItem').html('<div class="albumImage"><img src="' + item.image + '"></div><div class="albumInfo"><div class="title">' + item.title + '</div><div class="artist">' + item.artist + '</div><div class="album">' + item.album + '</div></div>');
+            }
+            
+            function loadStationItems(items){
+                $('#stationItem').html('');
+                $('#stationItem').append($('<option value="" selected="selected">Select a station:</option>'));
+                for (var i = 0; i < items.length; i++) {
+                    //                    $('#stationsList').append($('<li><a id="stationItem" value="' + i + '"><h3>' + items[i].title + '</h3></a></li>'));
+                    $('#stationItem').append($('<option value="' + i + '">' + items[i].title + '</option>'));
+                }
+            }
+            
+            //            loadNowPlayingItem({
+            //                image: "http://cont-sv5-3.pandora.com/images/public/amz/7/2/0/1/886976911027_500W_500H.jpg",
+            //                title: "Older",
+            //                artist: "Band Of Horses",
+            //                album: "XXXXXXXXXXXXXXXXXXXXXXXXX Infinite Arms"
+            //            });
+            //            
+//            loadStationItems([{
+//                title: "1"
+//            }, {
+//                title: "2"
+//            }, {
+//                title: "3"
+//            }, {
+//                title: "4"
+//            }, {
+//                title: "5"
+//            }, {
+//                title: "6"
+//            }, {
+//                title: "7"
+//            }, {
+//                title: "8"
+//            }, {
+//                title: "9"
+//            }, {
+//                title: "10"
+//            }, {
+//                title: "11"
+//            }]);
+        </script>
+    </body>
+</html>

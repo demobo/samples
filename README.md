@@ -21,9 +21,9 @@ http://code.google.com/appengine/downloads.html#Google_App_Engine_SDK_for_Python
 
 * step 2:
 
-run the samples on google app engine console and view http://localhost:PORT on the browser
+run the samples (ex. sandbox) on google app engine console and view http://localhost:PORT on chrome or safari browser
 
 
 * step 3:
 
-check out developer@demobo.com for documentation
+check out developer.demobo.com for documentation

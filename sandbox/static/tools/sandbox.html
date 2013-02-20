@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>controller sandbox</title>
+        <style>
+            body {
+                padding: 20px;
+            }
+            
+            div {
+                margin: 20px;
+            }
+			#demoboClose, #settings, #demoboHelpPage {
+				display: none;
+			}
+        </style>
+        <!-- include jQuery and demobo library-->
+        <link rel="stylesheet" type="text/css" href="http://api.demobo.com/app.css"/>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js">
+        </script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js">
+        </script>
+        <script type="text/javascript" src="http://api.demobo.com/demobo.1.6.0.min.js">
+        </script>
+        <!-- include jQuery and demobo library -->
+        <script type="text/javascript" src="/tools/sandbox.js">
+        </script>
+    </head>
+    <body>
+        <label>
+        	<label>More samples: /rc/text, /rc/slider, /rc/button, /rc/pandora</label><br>
+			<label>click upload to reload the mobile html</label><br>
+			<label>click test to run test cases in test.js</label><br>
+            <input type="text" id="url" value="/rc/pandora" size="100"/>
+            <button id="upload">
+                upload
+            </button>
+            <button id="set">
+                set
+            </button>
+            <button id="test">
+                test
+            </button>
+        </label>
+        <div>
+            <label>
+                <input type="radio" name="dimension" value="480x320" checked/>iphone
+            </label>
+            <label>
+                <input type="radio" name="dimension" value="800x480" />Nexus One 800x480
+            </label>
+            <label>
+                <input type="radio" name="dimension" value="854x480" />Droid 854x480
+            </label>
+            <label>
+                <input type="radio" name="dimension" value="320x240" />320x240
+            </label>
+            <label>
+                <input type="radio" name="dimension" value="960x480" />960x480
+            </label>
+			<label>
+                <input type="checkbox" id="orientation" checked />Landscape
+            </label>
+        </div>
+        <div id="simulator">
+            <iframe>
+            </iframe>
+        </div>
+		<div id="demoboBody"></div>
+        <div id="eventSource">
+        </div>
+		<div id="eventValue">
+        </div>
+		<div class="poweredby">
+			powered by <a class="appLink" href="http://www.demobo.com" target="_blank">de Mobo</a>
+		</div>
+		<div id="download" class="download">
+    		<a href="http://itunes.apple.com/us/app/de-mobo/id519605488?ls=1&amp;mt=8" target="_blank">
+	    		<img src="http://www.demobo.com/app_store.png">
+	    	</a>
+			<a href="http://play.google.com/store/apps/details?id=com.demobo.mobile" target="_blank">
+	    		<img src="http://www.demobo.com/badge_android.png">
+	    	</a>
+		</div>
+    </body>
+</html>

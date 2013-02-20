@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <title></title>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+        <link rel="stylesheet" type="text/css" href="http://demo.demobo.com/template/pandora/control.css" />
+		<link rel="stylesheet" type="text/css" href="control.css" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js">
+        </script>
+        <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js">
+        </script>
+    </head>
+    <body>
+        <!-- Home -->
+        <div data-role="page" id="main">
+            <div data-role="content" style="padding: 15px">
+            	<div class="row">
+            		<img src="http://demo.demobo.com/template/pandora/images/pandora-logo.png" />
+				</div>
+				<div class="searchBox row">
+					<input class="searchInput" type="text" autocomplete="off" spellcheck="false">
+				</div>
+				<div class="row">
+					<a id="upButton" class="upButton" value="up"></a>
+					<a id="downButton" class="downButton" value="down"></a>
+					<a id="playButton" class="playButton" value="play"></a>
+					<a id="pauseButton" class="pauseButton" value="pause"></a>
+					<a id="skipButton" class="skipButton" value="skip"></a>
+				</div>
+				<div class="volumeControl row volumeBackground">
+					<div class="volumeButton" id="volumeButton"></div>
+					<input name="slider" id="slider1" value="50" min="0" max="100" data-highlight="false" type="range" />
+				</div>
+            </div>
+            <div data-theme="a" data-role="footer" data-position="fixed">
+                <div data-role=navbar>
+                    <ul>
+                        <li>
+                            <a id=control href=#main class="ui-btn-active ui-state-persist" data-transition=none>Control</a>
+                        </li>
+                        <li>
+                            <a id=nowplayingTab href=#nowplaying data-transition=none data-prefetch>Now Playing</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" id=nowplaying data-dom-cache="true">
+            <div data-role="content">
+                <div id="nowplayingItem">
+                    
+                </div>
+            </div>
+            <!-- /content -->
+            <div data-theme="a" data-role="footer" data-position="fixed">
+                <div data-role=navbar>
+                    <ul>
+                        <li>
+                            <a id=control href=#main data-transition=none>Control</a>
+                        </li>
+                        <li>
+                            <a id=nowplayingTab href=#nowplaying class="ui-btn-active ui-state-persist" data-transition=none>Now Playing</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script>
+            
+            function loadNowPlayingItem(item){
+                $('#nowplayingItem').html('<div class="albumImage row"><img src="'+item.image+'"></div><div class="title row">'+item.title+'</div><div class="artist row">'+item.artist+'</div><div class="album row">'+item.album+'</div>');
+            }
+            
+			loadNowPlayingItem({
+				image:"http://cont-sv5-3.pandora.com/images/public/amz/7/2/0/1/886976911027_500W_500H.jpg",
+				title:"Older",
+				artist:"Band Of Horses",
+				album:"Infinite Arms"
+			});
+        </script>
+    </body>
+</html>

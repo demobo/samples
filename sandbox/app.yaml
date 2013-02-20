@@ -1,0 +1,21 @@
+application: de-mobo
+version: rc1
+runtime: python
+api_version: 1
+
+handlers:
+- url: /
+  static_files: static/tools/sandbox.html
+  upload: static/.*
+  
+- url: /(.*\.(html|css|json|txt|png|jpg|gif|jpg|jpeg|ico|mp3|ogg|ttf|js|svg))
+  static_files: static/\1
+  upload: static/.*
+  secure: optional
+   
+- url: /rc/(.*)  
+  static_files: static/rc/\1/control.html
+  upload: static/.*
+    
+- url: .*
+  script: main.py

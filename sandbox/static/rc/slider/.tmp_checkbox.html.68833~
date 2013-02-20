@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="">
+<head>  
+<meta charset="utf-8">
+<title>CSS3 iPhone Style Checkboxes - No JS, No Images</title>
+<meta name="description" content="CSS3 iPhone Style Checkboxes - No JS, No Images" />  
+<meta name="keywords" content="css3, iphone, checkboxes" />
+<meta name="robots" content="" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">
+</script>
+<style type="text/css">
+
+/* ------------Check------------- */
+
+body {
+	background: #242733;
+	font-family: "Lucida Grande", Verdana, Arial, sans-serif, Helvetica;
+}
+
+h2 {
+	text-align: center;
+	margin-top: 20px;
+	color: #fff;
+	text-shadow: #040404 0px 2px 5px;
+}
+
+h3 {
+	text-align: center;
+	color: #fff;
+}
+
+#container {
+	padding-bottom: 10px;
+	padding-top: 10px;
+	margin: 50px auto 0 auto;
+	width: 300px;
+	background: #f3f3f3;
+}
+
+ul#checked {
+	width: 300px;
+	list-style: none;
+	position: relative;
+}
+
+ul#checked li p {
+	display: block;
+	margin-bottom: 20px;
+	background: -moz-linear-gradient(19% 75% 90deg,#3095C7, #14539C); 
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#14539C), to(#3095C7));
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	border: 1px solid #555555;
+	width: 80px;
+	position: relative;
+	height: 32px;
+}
+
+ul#checked p:before {
+	content: "ON";
+	padding-left: 9px;
+	line-height: 32px;
+	color: #fff;
+	font-size: 14px;
+	text-shadow: #093B5C 0px -1px 1px;
+
+}
+
+ul#checked p:after {
+	content: "OFF";
+	padding-left: 12px;
+	line-height: 32px;
+	color: #fff;
+	font-size: 14px;
+	text-shadow: #093B5C 0px -1px 1px;
+}
+
+.check { 
+	display: block;
+	width: 40px;
+	height: 30px;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	background: -moz-linear-gradient(19% 75% 90deg,#FFFFFF, #A1A1A1);
+	background: #fff -webkit-gradient(linear, 0% 0%, 0% 100%, from(#A1A1A1), to(#FFFFFF));
+	border: 1px solid #e5e5e5;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+
+
+input[type=checkbox] {
+	display: none;
+}
+
+@-webkit-keyframes labelON {
+	0% {
+		top: 0px;
+    	left: 0px;
+	}
+	
+	100% { 
+		top: 0px;
+    	left: 38px;
+	}
+}
+
+input[type=checkbox]:checked + label.check {
+	top: 0px;
+	left: 38px;
+	-webkit-animation-name: labelON; 
+  	-webkit-animation-duration: .2s; 
+  	-webkit-animation-iteration-count: 1;
+  	-webkit-animation-timing-function: ease-in;
+  	-webkit-box-shadow: #244766 -1px 0px 3px;
+}
+
+@-webkit-keyframes labelOFF {
+	0% {
+		top: 0px;
+    	left: 38px;
+	}
+	
+	100% { 
+		top: 0px;
+    	left: 0px;
+	}
+}
+
+input[type=checkbox] + label.check {
+	top: 0px;
+	left: 0px;
+	-webkit-animation-name: labelOFF; 
+  	-webkit-animation-duration: .2s; 
+  	-webkit-animation-iteration-count: 1;
+  	-webkit-animation-timing-function: ease-in;
+  	-webkit-box-shadow: #244766 1px 0px 3px;
+}
+
+label.info {
+	position: absolute;
+	color: #000;
+	top:0px;
+	left: 100px;
+	line-height: 32px;
+	width: 200px;
+}
+
+
+</style>
+
+
+</head>
+
+<body>
+<div id="container">
+
+<ul id="checked">
+	<li>
+		<p>
+			<input type="checkbox" id="1" name="1" checked="checked"/>
+			<label class="check" for="1" onclick=""></label>
+			<label class="info" for="1" onclick="">Wi-Fi</label>
+		</p>
+	</li>
+	
+	<li>
+		<p>
+			<input type="checkbox" id="2" name="2" />
+			<label class="check" for="2" onclick=""></label>
+			<label class="info" for="2" onclick="">Alarms</label>
+		</p>
+	</li>
+	
+	<li>
+		<p>
+			<input type="checkbox" id="3" name="3" />
+			<label class="check" for="3" onclick=""></label>
+			<label class="info" for="3" onclick="">Warp Drive</label>
+		</p>
+	</li>
+	
+	</ul>
+
+
+</div>
+
+
+</body>
+
+</html>

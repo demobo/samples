@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+	<script type="text/javascript" src="http://demo.demobo.com/util.js"></script>
+	<link rel="stylesheet" type="text/css" href="http://demo.demobo.com/css/editable.css" />
+	<link rel="stylesheet" type="text/css" href="/css/editable.css" />
+	<script type="text/javascript">
+		jQuery(document).ready(function() {
+			document.ontouchmove = function(event){ event.preventDefault(); };
+		});
+	</script>	
+</head>
+<body>
+<div class="draggable">
+	<h3>To Do List:</h3>
+	<ul class="a" contenteditable="true">
+	  <li>Haircut</li>
+	  <li>Lunch with Sean</li>
+	  <li>Gym</li>
+	  <li>Super Market</li>
+	</ul>
+</div>
+</body>
+</html>
