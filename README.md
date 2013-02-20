@@ -1,14 +1,14 @@
 # de Mobo
-de Mobo is a JAVASCRIPT library which can easily be embedded in your web applications.
+de Mobo provides a Javascript API that connects web apps between browsers and smartphones. It makes web apps more personal, interactive, and native.
 
-It helps web developers putting all the good stuffs from smart phones into web HTML5 gaming.
+It helps web developers putting all the good stuffs from smart phones into web and mobile web develepments.
 
 For examples, accelerameter, microphone, touch screen, keyboard, GPS, camera, voice dectection, 
 2D gestures, 3D gestures and audio gestures ... 
 
 
-# Sample Games
-https://github.com/demobo/games
+# Samples
+https://github.com/demobo/samples
 
 
 # Tutorial
@@ -21,29 +21,9 @@ http://code.google.com/appengine/downloads.html#Google_App_Engine_SDK_for_Python
 
 * step 2:
 
-Edit the hosts file
-  
-sudo vi /etc/hosts
-
-add following line in the file
-
-127.0.0.1 dev.demobo.com
+run the samples on google app engine console and view http://localhost:PORT on the browser
 
 
 * step 3:
 
-Assign your email address to DEMOBO.developer in main.js
-
-DEMOBO.developer = "myemail@gmail.com";
-
-
-* step 4:
-
-run the web game on google app engine console and view http://dev.demobo.com:PORT on the browser
-
-
-* step 5:
-
-press ESC to show the connection QR code;
-
-use de Mobo mobile app to scan the connection code to connect to the game;
+check out developer@demobo.com for documentation
